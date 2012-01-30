@@ -1,0 +1,140 @@
+html {
+	width: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #F0F8FF;
+	
+}
+
+
+header {
+	min-height: 150px;
+	padding: 30px;
+	text-align: center;
+}
+
+header h1 {
+	font-size: 3em;
+	font-family: 'helvetica', sans-serif;
+	color: #000;
+	padding: 0;
+	margin-bottom: -10px;
+	font-weight: 300;
+}
+
+header h2 {
+	font-family: 'helvetica', sans-serif;
+	font-size: 1.4em;
+	color: #000;
+}
+
+nav#main {
+	margin: 0 auto;
+	width: 620px;
+	height: 50px;
+	margin-top: -30px;
+	border-bottom: 2px solid #F0F8FF;
+}
+
+nav#main ul{
+	text-align: center;
+}
+
+nav#main ul li{
+	font-family: 'helvetica', sans-serif;
+	list-style-type: none;
+	float: left;
+	padding: 20px;
+	font-size: 1.05em;
+}
+
+nav#main a{
+	text-decoration: none;
+	color: #000;
+
+}
+
+nav#main a:link, nav#main a:visited {
+	text-decoration: none;
+	color: #000;
+}
+
+nav#main a:hover {
+	color: #D9593D;
+}
+
+section#primary-content-area {
+	
+	width: 980px;
+	margin: 0 auto;
+}
+
+form#fileupload {
+	-moz-box-shadow: 1px 1px 1px #555555;
+	-webkit-box-shadow: 1px 0px 1px #555555;
+	box-shadow: 0px 0px 3px #555555;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.5)
+	display: block;
+	margin: 0 auto;
+	width: 300px;
+	margin-bottom: 100px;
+	margin-top: 40px;
+	padding: 15px;
+}
+
+.city {
+	-moz-box-shadow: 1px 1px 1px #555555;
+	-webkit-box-shadow: 1px 0px 1px #555555;
+	box-shadow: 0px 0px 3px #555555;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.5)
+	display: block;
+	margin: 0 auto;
+	width: 980px;
+	margin-bottom: 60px;
+	margin-top: 40px;
+	padding: 15px;
+	font-family: 'helvetica', sans-serif;
+}
+
+
+.city a:hover {
+	color: #000;
+	background-color: #D9593D;
+	display: block;
+}
+
+
+form#fileupload h3 {
+	font-family: 'helvetica', sans-serif;
+	font-size: 1.1em;
+}
+
+
+footer {
+	background: url('../images/outline.png');
+	height: 120px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 250px;
+	
+}
+
+footer small {
+	font-family: 'helvetica', sans-serif;
+	font-size: 0.9em;
+	color: #ffffff;
+	font-weight: 300;
+}
+
+

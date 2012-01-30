@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<config version="1.0">
+	<city id="0">
+		<name>Bristol</name>
+		<region>Avon</region>
+		<country>United Kingdom</country>
+		<weather>http://www.google.com/ig/api?weather=Bristol</weather>
+		<news>http://feeds.bbci.co.uk/news/england/bristol/rss.xml</news>
+		<map>
+			<lat>51.45</lat>
+			<long>-2.583333</long>
+			<scale>3000</scale>
+		</map>
+	</city>
+	<city id="1">
+		<name>Grenoble</name>
+		<region>Rhone-Alpes</region>
+		<country>France</country>
+		<weather>http://www.google.com/ig/api?weather=Grenoble+FR</weather>
+		<news>http://www.guide2rhonealpes.com/news_rss.asp</news>
+		<map>
+			<lat>45.185602</lat>
+			<long>5.740748</long>
+			<scale>3000</scale>
+		</map>
+	</city>
+	<city id="2">
+		<name>Bristol</name>
+		<region>Avon</region>
+		<country>United Kingdom</country>
+		<weather>http://www.google.com/ig/api?weather=Bristol</weather>
+		<news>http://feeds.bbci.co.uk/news/england/bristol/rss.xml</news>
+		<map>
+			<lat>51.45</lat>
+			<long>-2.583333</long>
+			<scale>3000</scale>
+		</map>
+	</city>
+	<city id="3">
+		<name>Grenoble</name>
+		<region>Rhone-Alpes</region>
+		<country>France</country>
+		<weather>http://www.google.com/ig/api?weather=Grenoble+FR</weather>
+		<news>http://www.guide2rhonealpes.com/news_rss.asp</news>
+		<map>
+			<lat>45.185602</lat>
+			<long>5.740748</long>
+			<scale>3000</scale>
+		</map>
+	</city>
+	<city id="4">
+		<name>Bristol</name>
+		<region>Avon</region>
+		<country>United Kingdom</country>
+		<weather>http://www.google.com/ig/api?weather=Bristol</weather>
+		<news>http://feeds.bbci.co.uk/news/england/bristol/rss.xml</news>
+		<map>
+			<lat>51.45</lat>
+			<long>-2.583333</long>
+			<scale>3000</scale>
+		</map>
+	</city>
+	<city id="5">
+		<name>Grenoble</name>
+		<region>Rhone-Alpes</region>
+		<country>France</country>
+		<weather>http://www.google.com/ig/api?weather=Grenoble+FR</weather>
+		<news>http://www.guide2rhonealpes.com/news_rss.asp</news>
+		<map>
+			<lat>45.185602</lat>
+			<long>5.740748</long>
+			<scale>3000</scale>
+		</map>
+	</city>
+</config>
