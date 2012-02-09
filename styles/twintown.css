@@ -1,14 +1,27 @@
+@import url('./instagram.css');
+@import url('./weather.css');
+
 html {
 	width: 100%;
+	height: 100%;
+	background-color: #232323;
 }
 
 body {
 	padding: 0;
 	margin: 0;
 	background-color: #F0F8FF;
-	
 }
 
+.clear {
+	clear: both;
+}
+
+article h1 { 
+	margin-left: 10px;
+	font-family: 'helvetica', sans-serif;
+	font-size: 1.6em;
+}
 
 header {
 	min-height: 150px;
@@ -23,12 +36,14 @@ header h1 {
 	padding: 0;
 	margin-bottom: -10px;
 	font-weight: 300;
+	margin-left: 10px;
 }
 
 header h2 {
 	font-family: 'helvetica', sans-serif;
 	font-size: 1.4em;
 	color: #000;
+	margin-left: 5px;
 }
 
 nav#main {
@@ -54,7 +69,6 @@ nav#main ul li{
 nav#main a{
 	text-decoration: none;
 	color: #000;
-
 }
 
 nav#main a:link, nav#main a:visited {
@@ -72,7 +86,7 @@ section#primary-content-area {
 	margin: 0 auto;
 }
 
-form#fileupload {
+form.fileupload {
 	-moz-box-shadow: 1px 1px 1px #555555;
 	-webkit-box-shadow: 1px 0px 1px #555555;
 	box-shadow: 0px 0px 3px #555555;
@@ -100,26 +114,66 @@ form#fileupload {
 	background: rgba(255, 255, 255, 0.5)
 	display: block;
 	margin: 0 auto;
-	width: 980px;
+	width: 960px;
 	margin-bottom: 60px;
 	margin-top: 40px;
-	padding: 15px;
+	padding: 10px;
 	font-family: 'helvetica', sans-serif;
 }
 
+.city.news  a {
+	padding: 5px;
+}
+
+.city a{
+	display: block;
+	color: #000;
+	text-decoration: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-left: -5px;
+}
 
 .city a:hover {
 	color: #000;
-	background-color: #D9593D;
-	display: block;
+	background-color: #DCDCDC;
+}
+
+.city weather {
+	padding: 5px;
+}
+
+.city.weather h3 {
+	margin-top: 40px;
+	color: red;
 }
 
 
-form#fileupload h3 {
+form.fileupload h3 {
 	font-family: 'helvetica', sans-serif;
 	font-size: 1.1em;
 }
 
+.twitterfeed {
+	-moz-box-shadow: 1px 1px 1px #555555;
+	-webkit-box-shadow: 1px 0px 1px #555555;
+	box-shadow: 0px 0px 3px #555555;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.5)
+	display: block;
+	margin: 0 auto;
+	width: 960px;
+	margin-bottom: 60px;
+	margin-top: 40px;
+	padding: 10px;
+	font-family: 'helvetica', sans-serif;
+	background: red;
+
+}
 
 footer {
 	background: url('../images/outline.png');
@@ -127,7 +181,6 @@ footer {
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 250px;
-	
 }
 
 footer small {

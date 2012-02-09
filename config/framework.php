@@ -10,6 +10,8 @@
  * This is a group component for the DSA coursework.
  *********************************************************/
 
+// Turn session handling on
+session_start();
 
 // Turn PHP errors on
 error_reporting(E_ALL);
@@ -17,12 +19,12 @@ error_reporting(E_ALL);
 /** Constants **/
 switch ($_SERVER['HTTP_HOST']) { // Check to see what server we're running on
 	case 'www.cems.uwe.ac.uk': // UWE Live Server
-		define('BASE_URL', 'http://www.cems.uwe.ac.uk/~b2-argo/dsa_assign/application');
-		define('BASE_URI', '/nas/students/b/b2-argo/unix/public_html/dsa_assign/application');
+		define('BASE_URL', 'http://www.cems.uwe.ac.uk/~b2-argo/dsa_assign/app');
+		define('BASE_URI', '/nas/students/b/b2-argo/unix/public_html/dsa_assign/app');
 		break;
 	case 'isa.cems.uwe.ac.uk': // UWE Development Server
-		define('BASE_URL', 'http://isa.cems.uwe.ac.uk/~b2-argo/dsa_assign/application');
-		define('BASE_URI', '/nas/students/b/b2-argo/unix/public_html/dsa_assign/application');
+		define('BASE_URL', 'http://isa.cems.uwe.ac.uk/~b2-argo/dsa_assign/app');
+		define('BASE_URI', '/nas/students/b/b2-argo/unix/public_html/dsa_assign/app');
 		break;
 	case 'projects.benargo.com': // Personal Development Server
 		define('BASE_URL', 'http://projects.benargo.com/twincities');
@@ -44,12 +46,12 @@ if(!defined('__DIR__')) {
 $config_file = BASE_URL.'/config/config.xml';
 $num_cities = get_num_cities($config_file);
 
+
 /** API Keys **/
 $key = array();
 $key['google']         = 'AIzaSyDkvWzY29Ocjimb6kxJRVzmYXPeNwcmGBQ';
 $key['instagram']      = '0aa87e24750c40b5af6fa4a9f0d9f503';
 $key['twitter']        = 'wEmzdLTUruTFWsDWUkFA';
-$key['{project_name}'] = '';
 
 // Set the timezone to GMT
 @date_default_timezone_set("GMT"); 
@@ -192,14 +194,14 @@ class city {
 					$this->map = $city->map;
 				
 				}
-				
+
 			}
 
 			return true;
 			
 		} else { // Conditional @value: No
 			
-			return false;
+				return false;
 			
 		}
 		
@@ -333,17 +335,15 @@ class city {
 	 * components, and are included in the following order:
 	 * 1. Instagram by Ben Argo (10008548)
 	 * 2. Twitter by Rachel Borkala (XXXXXXXX)
-	 * 3. {Component Name} by Richard George (09011635)
+	 * 3. Ebay by Richard George (09011635)
 	 *********************************************************/
-	
-	// Commented out for now since they have not been completed.
 
 	/* Function: Instagram */
 	public function instagram() {
 
 		/*********************************************************
 		 * @file: instagram.php
-		 * @class: 
+		 * @class: city
 		 * @package: twincities
 		 * @created: 19 January 2012
 		 * @author: 10008548
@@ -367,18 +367,19 @@ class city {
 		$scale = $this->map->scale;
 
 		// Build the Instagram URI
-		$uri = 'https://api.instagram.com/v1/media/search?lat='. $latitude .'&lng='. $longitude .'&distance='. $scale .'&access_token='. $key['instagram'];
-		
-		print($uri);
+		$uri = 'https://api.instagram.com/v1/media/search?lat='. $latitude .'&lng='. $longitude .'&distance='. $scale .'&client_id='. $key['instagram'];
 
-		// Load the SimpleXML object
-		$xml = @simplexml_load_string(get_file($uri), NULL, LIBXML_NOCDATA);
+		// Load the JSON object
+		$json = @get_file($uri);
 
-		// Conditional: Is the returned XML file valid?
-		if($xml) { // Conditional @value: Yes
+		// Conditional: Is the returned JSON file valid?
+		if($json) { // Conditional @value: Yes
 
-			// Return the SimpleXML string as an object
-			return $xml;
+			// Create a new object with the decoded JSON
+			$obj = json_decode($json);
+			
+			// Return the new object
+			return $obj;
 
 		} else { // Conditional @value: No 
 
@@ -387,56 +388,54 @@ class city {
 		}
 
 	}
+	
+	/* Function: Instagram Large */
+	public function instagram_large($id) {
+		/*********************************************************
+		 * @file: instagram.php
+		 * @class: city
+		 * @package: twincities
+		 * @created: 07 February 2012
+		 * @author: 10008548
+		 * 
+		 * This class provides the framework needed to
+		 * connect to instagram's API, and download
+		 * a large copy of a specified image
+		 *
+		 * This is an individual component for the DSA coursework
+		 * completed by Ben Argo (student number 10008548)
+		 *********************************************************/
+		
+		// Import the API Keys
+		global $key;
+		
+		// Build the Instagram URI
+		$uri = 'https://api.instagram.com/v1/media/'. $id .'?client_id='. $key['instagram'];
+		
+		// Load the JSON object
+		$json = @get_file($uri);
+		
+		// Conditional: Is the returned JSON file valid?
+		if($json) { // Conditional @value: Yes
+			
+			// Create a new object with the decoded JSON
+			$obj = json_decode($json);
+			
+			// Return the new object
+			return $obj->data;
+			
+		} else { // Conditional @value: No
+			
+			return false;
+		
+		}
+		
+	}
 
 	/* Function: Twitter */
-	//require_once(CONFIG.'/twitter.php');
 
-	/* Function: {Component Name} */
-	//require_once(CONFIG.'/component_name.php');
+	/* Function: Ebay */
 
-}
-
-
-/** Function: Invalid Upload of Configuration File **/
-function invalid_upload() {
-	
-	/*********************************************************
-	 * @function: invalid_upload
-	 * @author: 10008548, 09011635 & XXXXXXXX
-	 * @created: 24 January 2012
-	 * @updated: N/A
-	 *
-	 * This function is run if the uploaded config file (run
-	 * through AJAX as part of upload.php) is invalid.
-	 *********************************************************/
-	
-	// Change the global variables	
-	$config_file = BASE_URL.'config/config.xml';
-	$num_cities = get_num_cities();
-	
-	// Unset the $cities array
-	unset($cities);
-
-	// Initialise a new copy of it
-	$cities = array();
-	
-	// Loop through the number of cities and create a new city object
-	for($i = 0; $i < $num_cities; $i++) {
-
-		$city = new city($i);
-
-		array_push($cities, $city);
-
-	}
-	
-}
-
-
-/** Handle non-AJAX version of Configuration Upload **/
-if (isset($_FILES['config'])) {
-
-	// Include the upload file handler.
-	require(__DIR__.'/upload.php');
 
 }
 

@@ -1,7 +1,7 @@
 <?php
 
 // Include the configuration file
-require_once(__DIR__.'/config/framework.php');
+require_once(dirname(__FILE__).'/config/framework.php');
 
 // Define $cities as an array which will hold each of our cities
 $cities = array();
@@ -93,15 +93,21 @@ for($i = 0; $i < $num_cities; $i++) {
 					/* Instagram */
 					case 'instagram':
 
+						require(__DIR__.'/config/instagram.php');
+
 						break;
 
 					/* Richard */
 					case 'ebay':
+					
+						require(__DIR__.'/config/ebay.php');
 
 						break;
 
 					/* Twitter */
 					case 'twitter':
+					
+						require(__DIR__.'/config/twitter.php');
 
 						break;
 
@@ -115,15 +121,6 @@ for($i = 0; $i < $num_cities; $i++) {
 			
 		</article><!-- End of Article -->
 
-		<form id="fileupload" action="./" enctype="multipart/form-data" method="post">
-
-			<h3>Upload your own configuration file</h3>
-
-			<p><input type="file" name="config" />
-			<input type="submit" value="Upload" /></p>
-
-		</form>
-
 	</section><!-- End of Main content area -->
 
 	<footer><!-- Footer -->
@@ -133,8 +130,6 @@ for($i = 0; $i < $num_cities; $i++) {
 			<p>Richard George - 09011635</p>
 		</small>
 	</footer><!-- End of Footer -->
-	
-	<script src="<?php echo BASE_URL; ?>/scripts/ajax.js"></script>
 
 </body>
 

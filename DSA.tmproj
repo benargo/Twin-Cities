@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>config/news.php</string>
+	<string>config/framework.php</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>.htaccess</string>
 			<key>lastUsed</key>
-			<date>2012-01-27T11:32:26Z</date>
+			<date>2012-02-07T17:51:11Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -24,9 +24,15 @@
 		</dict>
 		<dict>
 			<key>filename</key>
+			<string>reset.php</string>
+			<key>lastUsed</key>
+			<date>2012-02-07T17:51:11Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
 			<string>index.php</string>
 			<key>lastUsed</key>
-			<date>2012-01-27T11:50:21Z</date>
+			<date>2012-02-07T18:25:27Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -49,89 +55,61 @@
 			<string>scripts</string>
 		</dict>
 		<dict>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>styles</string>
 			<key>regexFolderFilter</key>
 			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
 			<key>sourceDirectory</key>
 			<string>styles</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>upload.php</string>
+			<key>lastUsed</key>
+			<date>2012-02-07T17:51:12Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>config/config.xml</key>
+		<key>config/framework.php</key>
 		<dict>
 			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>60</integer>
-				<key>line</key>
-				<integer>7</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>8</integer>
-				<key>line</key>
-				<integer>7</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>60</integer>
-				<key>line</key>
-				<integer>7</integer>
-			</dict>
-		</dict>
-		<key>config/news.php</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>59</integer>
-				<key>line</key>
-				<integer>10</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>2</integer>
+				<integer>34</integer>
 			</dict>
-			<key>selectTo</key>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>142</integer>
+		</dict>
+		<key>config/instagram.php</key>
+		<dict>
+			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>59</integer>
+				<integer>24</integer>
 				<key>line</key>
-				<integer>10</integer>
+				<integer>26</integer>
 			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>12</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>config/news.php</string>
-		<string>config/config.xml</string>
+		<string>config/framework.php</string>
+		<string>config/instagram.php</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{203, 4}, {1067, 774}}</string>
+	<string>{{207, 0}, {1710, 1054}}</string>
 </dict>
 </plist>

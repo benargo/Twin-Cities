@@ -60,10 +60,14 @@ if($_GET['app']) { // Yes we had a result
 		/* Richard */
 		case 'ebay':
 		
+			require(__DIR__.'/ebay.php');
+		
 			break;
 			
 		/* Twitter */
 		case 'twitter':
+		
+			require(__DIR__.'/twitter.php');
 		
 			break;
 		
