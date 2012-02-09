@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /twincities/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ index.php?app=$1 [L,QSA]

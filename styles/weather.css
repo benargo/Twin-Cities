@@ -1,0 +1,17 @@
+.weather table {
+	width: 500px;
+}
+
+.weather td {
+	padding: 5px;
+}
+
+.weather td:first-of-type {
+	padding: 5px 5px 5px 0px;
+	width: 200px;
+}
+
+.weather td > img {
+	float: right;
+	padding: 5px;
+}

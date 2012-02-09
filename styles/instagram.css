@@ -1,0 +1,48 @@
+.city.instagram a, .city.instagram_large a {
+	display: inline;
+	margin: 0;
+}
+
+.city a.ig_thumbnail {
+	display: block;
+	float: left;
+	width: 150px;
+	height: 150px;
+	padding: 10px;
+	margin: 11px 11px 11px 11px;
+}
+
+.ig_thumbnail img {
+	display: block;
+	margin: 0 auto;
+}
+
+.ig_thumbnail:hover {
+	background-color: #DCDCDC;
+}
+
+.ig_thumbnail:nth-of-type(5n+1) {
+	clear: left;
+}
+
+#back_to_all {
+	float: right;
+	margin-top: -61px;
+}
+
+#back_to_all a {
+	padding: 10px;
+}
+
+.instagram_large p {
+	text-align: center;
+}
+
+.instagram_large a.permalink {
+	display: block;
+	padding: 10px;
+}
+
+.instagram_large a.permalink:hover {
+	background-color: #DCDCDC;
+}
