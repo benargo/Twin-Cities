@@ -7,7 +7,13 @@
  * @updated: 24 January 2012
  * @author: 10008548, 09011635 & XXXXXXXX
  * 
- * This file is required by ajax.php
+ * This file is required by index.php. It pulls in the
+ * Instagram API, based on the geocode information for our
+ * given cities (this is defined in the XML config file).
+ * Once it has the Instagram API it has two functions. One
+ * of them being rendering all photos for the given cities
+ * and the other one being a large-scale view of a certain
+ * photo.
  *********************************************************/
 
 

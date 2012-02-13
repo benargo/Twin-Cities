@@ -4,6 +4,7 @@
 
 .weather td {
 	padding: 5px;
+	line-height: 100%;
 }
 
 .weather td:first-of-type {

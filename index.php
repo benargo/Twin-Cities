@@ -1,7 +1,7 @@
 <?php
 
 // Include the configuration file
-require_once(dirname(__FILE__).'/config/framework.php');
+require_once('config/framework.php');
 
 // Define $cities as an array which will hold each of our cities
 $cities = array();
@@ -74,14 +74,14 @@ for($i = 0; $i < $num_cities; $i++) {
 					/* News */
 					case 'news':
 
-						require(__DIR__.'/config/news.php');
+						require(BASE_URI.'/config/news.php');
 
 						break;
 
 					/* Weather */
 					case 'weather':
 
-						require(__DIR__.'/config/weather.php');
+						require(BASE_URI.'/config/weather.php');
 
 						break;
 
@@ -93,21 +93,21 @@ for($i = 0; $i < $num_cities; $i++) {
 					/* Instagram */
 					case 'instagram':
 
-						require(__DIR__.'/config/instagram.php');
+						require(BASE_URI.'/config/instagram.php');
 
 						break;
 
 					/* Richard */
 					case 'ebay':
 					
-						require(__DIR__.'/config/ebay.php');
+						require(BASE_URI.'/config/ebay.php');
 
 						break;
 
 					/* Twitter */
 					case 'twitter':
 					
-						require(__DIR__.'/config/twitter.php');
+						require(BASE_URI.'/config/twitter.php');
 
 						break;
 

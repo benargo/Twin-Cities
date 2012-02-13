@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 
 /** Constants **/
 switch ($_SERVER['HTTP_HOST']) { // Check to see what server we're running on
-	case 'www.cems.uwe.ac.uk': // UWE Live Server
+	case 'web02.cems.uwe.ac.uk': // UWE Live Server
 		define('BASE_URL', 'http://www.cems.uwe.ac.uk/~b2-argo/dsa_assign/app');
 		define('BASE_URI', '/nas/students/b/b2-argo/unix/public_html/dsa_assign/app');
 		break;
@@ -32,16 +32,7 @@ switch ($_SERVER['HTTP_HOST']) { // Check to see what server we're running on
 		break;
 }
 
-/** __DIR__ Constant 
- * Because UWE's servers are running on PHP
- * version 5.2, the super constant __DIR__
- * doesn't exist, and therefore we need to
- * define it.
- *******************************************/
-if(!defined('__DIR__')) {
-	define('__DIR__', dirname(__FILE__));
-}
-
+	
 /** Global Variables **/
 $config_file = BASE_URL.'/config/config.xml';
 $num_cities = get_num_cities($config_file);
@@ -76,7 +67,7 @@ function get_file($uri) {
  *********************************************************/
 
 	// Conditional: Do we need to use the proxy?
-	if(substr($_SERVER['HTTP_HOST'], 4) == 'cems.uwe.ac.uk') { // Conditional @value: Yes
+	if(stristr($_SERVER['HTTP_HOST'], 'cems.uwe.ac.uk')) { // Conditional @value: Yes
 	
 		// Create a context for the PHP file_get_contents function
 		$context = stream_context_create(array('http'=> array('proxy'=>'proxysg.uwe.ac.uk:8080', 'header'=>'Cache-Control: no-cache'))); 

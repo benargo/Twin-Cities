@@ -7,7 +7,7 @@
  * @updated: 24 January 2012
  * @author: 10008548, 09011635 & XXXXXXXX
  * 
- * This file is required by ajax.php
+ * This file is required by index.php
  *********************************************************/
 
 // Make sure we're being called properly
