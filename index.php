@@ -6,7 +6,6 @@ require_once('config/framework.php');
 // Define $cities as an array which will hold each of our cities
 $cities = array();
 
-
 // Loop through the number of cities and create a new city object
 for($i = 0; $i < $num_cities; $i++) {
 	

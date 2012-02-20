@@ -128,6 +128,8 @@ function constructPostCallAndGetResponse($endpoint, $query, $xmlfilter) {
   );
 
   $session  = curl_init($endpoint);                       // create a curl session
+    curl_setopt($session, CURLOPT_RETURNTRANSFER, TRUE); 
+	curl_setopt($session, CURLOPT_PROXY, 'proxysg.uwe.ac.uk:8080');  
   curl_setopt($session, CURLOPT_POST, true);              // POST request type
   curl_setopt($session, CURLOPT_HTTPHEADER, $headers);    // set headers using $headers array
   curl_setopt($session, CURLOPT_POSTFIELDS, $xmlrequest); // set the body of the POST

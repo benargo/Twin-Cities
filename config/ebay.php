@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 include('ebay-uk.php');
 
@@ -18,4 +18,4 @@ function bar() {
 
 bar();
 
-?>
+ ?>

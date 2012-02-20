@@ -1,11 +1,11 @@
-<?php // news.php
+<?php // instagram.php
 
 /*********************************************************
- * @file: news.php
+ * @file: instagram.php
  * @package: twincities
  * @created: 24 January 2012
  * @updated: 24 January 2012
- * @author: 10008548, 09011635 & XXXXXXXX
+ * @author: 10008548
  * 
  * This file is required by index.php. It pulls in the
  * Instagram API, based on the geocode information for our

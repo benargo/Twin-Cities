@@ -1,4 +1,5 @@
 <?php
+
 error_reporting(E_ALL);  // Turn on all errors, warnings, and notices for easier debugging
 $endpoint1 = 'http://svcs.ebay.com/services/search/FindingService/v1';  // URL to call
 
@@ -128,6 +129,8 @@ function constructPostCallAndGetResponse1($endpoint1, $query1, $xmlfilter1) {
   );
 
   $session1  = curl_init($endpoint1);                       // create a curl session
+    curl_setopt($session1, CURLOPT_RETURNTRANSFER, TRUE); 
+	curl_setopt($session1, CURLOPT_PROXY, 'proxysg.uwe.ac.uk:8080');  
   curl_setopt($session1, CURLOPT_POST, true);              // POST request type
   curl_setopt($session1, CURLOPT_HTTPHEADER, $headers1);    // set headers using $headers array
   curl_setopt($session1, CURLOPT_POSTFIELDS, $xmlrequest1); // set the body of the POST

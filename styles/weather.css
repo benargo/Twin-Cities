@@ -12,6 +12,12 @@
 	width: 200px;
 }
 
+.weather tr:nth-of-type(3n) td {
+	
+	border-bottom: solid 1px gray;
+	
+}
+
 .weather td > img {
 	float: right;
 	padding: 5px;

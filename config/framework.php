@@ -4,8 +4,8 @@
  * @file: framework.php
  * @package: twincities
  * @created: 19 January 2012
- * @updated: 24 January 2012
- * @author: 10008548, 09011635 & XXXXXXXX
+ * @updated: 20 February 2012
+ * @author: 10008548, 09011635 & 10011585
  * 
  * This is a group component for the DSA coursework.
  *********************************************************/
@@ -92,7 +92,7 @@ function get_num_cities() {
 	/*********************************************************
 	 * @function: get_num_cities
 	 * @parameter: $uri as URI
-	 * @author: 10008548, 09011635 & XXXXXXXX
+	 * @author: 10008548, 09011635 & 10011585
 	 * @created: 23 January 2012
 	 * @updated: N/A
 	 *
@@ -138,9 +138,10 @@ class city {
  	public $name;
 	public $region;
 	public $country;
-	public $weather;
+	private $weather;
 	private $news;
 	private $map;
+	private $twitter;
 	
 	/* Function: Object Construction */
 	public function __construct($id) {
@@ -150,9 +151,9 @@ class city {
 		 * @visibility: public
 		 * @parameter: $file as a file
 		 * @parameter: $id as integer
-		 * @author: 10008548, 09011635 & XXXXXXXX
+		 * @author: 10008548, 09011635 & 10011585
 		 * @created: 20 January 2012
-		 * @updated: N/A
+		 * @updated: 20 February 2012
 		 *
 		 * This function builds an instance of the city object.
 		 * It creates a simple XML object of the passed config 
@@ -183,6 +184,7 @@ class city {
 					$this->weather = (string) $city->weather;
 					$this->news = (string) $city->news;
 					$this->map = $city->map;
+					$this->twitter = $city->twitter;
 				
 				}
 
@@ -205,7 +207,7 @@ class city {
 		/*********************************************************
 		 * @function: weather
 		 * @visibility: public
-		 * @author: 10008548, 09011635 & XXXXXXXX
+		 * @author: 10008548, 09011635 & 10011585
 		 * @created: 20 January 2012
 		 * @updated: N/A
 		 *
@@ -250,7 +252,7 @@ class city {
 		/*********************************************************
 		 * @function: news
 		 * @visibility: public
-		 * @author: 10008548, 09011635 & XXXXXXXX
+		 * @author: 10008548, 09011635 & 10011585
 		 * @created: 20 January 2012
 		 * @updated: N/A
 		 *
@@ -279,7 +281,7 @@ class city {
 		/*********************************************************
 		 * @function: map
 		 * @visibility: public
-		 * @author: 10008548, 09011635 & XXXXXXXX
+		 * @author: 10008548, 09011635 & 10011585
 		 * @created: 20 January 2012
 		 * @updated: N/A
 		 *
@@ -325,7 +327,7 @@ class city {
 	 * This section denotes the start of the DSA individual
 	 * components, and are included in the following order:
 	 * 1. Instagram by Ben Argo (10008548)
-	 * 2. Twitter by Rachel Borkala (XXXXXXXX)
+	 * 2. Twitter by Rachel Borkala (10011585s)
 	 * 3. Ebay by Richard George (09011635)
 	 *********************************************************/
 
@@ -333,7 +335,7 @@ class city {
 	public function instagram() {
 
 		/*********************************************************
-		 * @file: instagram.php
+		 * @file: framework.php
 		 * @class: city
 		 * @package: twincities
 		 * @created: 19 January 2012
@@ -383,7 +385,7 @@ class city {
 	/* Function: Instagram Large */
 	public function instagram_large($id) {
 		/*********************************************************
-		 * @file: instagram.php
+		 * @file: framework.php
 		 * @class: city
 		 * @package: twincities
 		 * @created: 07 February 2012
@@ -424,9 +426,59 @@ class city {
 	}
 
 	/* Function: Twitter */
+	public function twitter() {
+	
+		/*********************************************************
+		 * @file: framework.php
+		 * @class: city
+		 * @package: twincities
+		 * @created: 20 January 2012
+		 * @author: 10011585
+		 * 
+		 * This function provides the framework for generating the
+		 * XML needed to run the twitter application.
+		 *********************************************************/
+		
+		// Build the twitter URI
+		$uri = 'https://api.twitter.com/1/statuses/user_timeline.xml?user_id='. $this->twitter .'&count=10&exclude_replies=true';
+		
+		$xml = @simplexml_load_string(get_file($uri), NULL, LIBXML_NOCDATA);
+		
+		// Conditional: Is the returned XML file valid?
+		if($xml) { // Conditional @value: Yes
+			
+			// Get the statuses only
+			$tweets = $xml->status;
+			
+			// Return the SimpleXML string as an object
+			return $tweets;
+			
+		} else { // Conditional @value: No 
+			
+			return false;
+			
+		}
+	
+	
+	}
 
 	/* Function: Ebay */
-
+	public function ebay() {
+			
+		/*********************************************************
+		 * @file: framework.php
+		 * @class: city
+		 * @package: twincities
+		 * @created: 20 February 2012
+		 * @author: 09011635
+		 * 
+		 * This function provides the framework for generating the
+		 * XML needed to run the twitter application.
+		 *********************************************************/
+		
+		
+		
+	}
 
 }
 
