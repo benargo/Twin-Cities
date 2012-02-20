@@ -1,11 +1,15 @@
 <?php
-
-// API request variables
+error_reporting(E_ALL);  // Turn on all errors, warnings, and notices for easier debugging
 $endpoint1 = 'http://svcs.ebay.com/services/search/FindingService/v1';  // URL to call
-$query1 = 'grenoble, france';  // Supply your own query keywords as needed
 
-// Create a PHP array of the item filters you want to use in your request
-$filterarray1 =
+include("xmlhandler1.php");
+echo getCityRegion1(1);
+ 
+
+$query1 = getCityRegion1(1);
+
+   // Create a PHP array of the item filters you want to use in your request
+$filterarray1 = 
   array(
     array(
     'name' => 'MaxPrice',
@@ -59,7 +63,7 @@ $resp1 = simplexml_load_string(constructPostCallAndGetResponse1($endpoint1, $que
 
 // Check to see if the call was successful, else print an error
 if ($resp1->ack == "Success") {
-  $results1 = '';  // Initialize the $results variable
+  $results1 = '';  // Initialize the $results1 variable
 
   // Parse the desired information from the response
   foreach($resp1->searchResult->item as $item1) {
@@ -67,7 +71,7 @@ if ($resp1->ack == "Success") {
     $link1  = $item1->viewItemURL;
     $title1 = $item1->title;
 
-    // Build the desired HTML code for each searchResult.item node and append it to $results
+    // Build the desired HTML code for each searchResult.item node and append it to $results1
     $results1 .= "<tr><td><img src=\"$pic1\"></td><td><a href=\"$link1\">$title1</a></td></tr>";
   }
 }
@@ -75,17 +79,18 @@ else {  // If the response does not indicate 'Success,' print an error
   $results1  = "<h3>Oops! The request was not successful. Make sure you are using a valid ";
   $results1 .= "AppID for the Production environment.</h3>";
 }
+
 ?>
 
 <!-- Build the HTML page with values from the call response -->
 <html>
 <head>
-<title>eBay Search Results for <?php echo $query1; ?></title>
+<title>eBay Search results for <?php echo $query1; ?></title>
 <style type="text/css">body {font-family: arial, sans-serif;} </style>
 </head>
 <body>
 
-<h1>eBay Search Results for <?php echo $query1; ?></h1>
+<h1>eBay Search results for <?php echo $query1; ?></h1>
 
 <table>
 <tr>
@@ -100,7 +105,7 @@ else {  // If the response does not indicate 'Success,' print an error
 
 <?php
 function constructPostCallAndGetResponse1($endpoint1, $query1, $xmlfilter1) {
-  global $xmlrequest1;
+  global $xmlrequest;
 
   // Create the XML request to be POSTed
   $xmlrequest1  = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";

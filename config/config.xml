@@ -7,14 +7,14 @@
 		<weather>http://www.google.com/ig/api?weather=Oxford+GB</weather>
 		<news>http://feeds.bbci.co.uk/news/england/oxford/rss.xml</news>
 		<map>
-			<lat>51.751944</lat>
-			<long>-1.257778</long>
+			<lat>51.45</lat>
+			<long>-2.583333</long>
 			<scale>3000</scale>
 		</map>
 	</city>
 	<city id="1">
 		<name>Grenoble</name>
-		<region>Rhone-Alpes</region>
+		<region>Rhone-Alps</region>
 		<country>France</country>
 		<weather>http://www.google.com/ig/api?weather=Grenoble+FR</weather>
 		<news>http://www.guide2rhonealpes.com/news_rss.asp</news>

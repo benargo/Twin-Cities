@@ -2,28 +2,12 @@
 error_reporting(E_ALL);  // Turn on all errors, warnings, and notices for easier debugging
 $endpoint = 'http://svcs.ebay.com/services/search/FindingService/v1';  // URL to call
 
-$reader = new XMLReader(); 
-$reader->open('config.xml'); 
-while ($reader->read()) { 
-	if($reader->nodeType == XMLREADER::ELEMENT){
- 
-		if ($reader->name == "name"){ 
-			$reader->read(); 
-			$name = trim($reader->value); 
-		}elseif($reader->name == "region"){ 
-		   	$reader->read(); 
-		   	$region = trim($reader->value); 
-		}
-		if(!empty($name) && !empty($region)){
-			$city_array[] = "'$name, $region'";
-			$name="";$region="";
-		}
-	}
-}
+include("xmlhandler.php");
+echo getCityRegion(0);
  
  
-foreach($city_array as $query){
-   //put your exisitng code in here (query set automatically to each name/region in your xml file
+$query = getCityRegion(0);
+
    // Create a PHP array of the item filters you want to use in your request
 $filterarray =
   array(
