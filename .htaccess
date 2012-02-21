@@ -1,5 +1,7 @@
 RewriteEngine On
-RewriteBase /twincities/
+RewriteBase /~b2-argo/dsa_assign/app/
+
+RewriteRule ^(.+)\.phps$ https://raw.github.com/benargo/Twin-Cities/master/$1.php [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

@@ -440,7 +440,7 @@ class city {
 		 *********************************************************/
 		
 		// Build the twitter URI
-		$uri = 'https://api.twitter.com/1/statuses/user_timeline.xml?user_id='. $this->twitter .'&count=10&exclude_replies=true';
+		$uri = 'http://labs.benargo.com/twitter.php?user_id='. $this->twitter;
 		
 		$xml = @simplexml_load_string(get_file($uri), NULL, LIBXML_NOCDATA);
 		
@@ -463,22 +463,7 @@ class city {
 	}
 
 	/* Function: Ebay */
-	public function ebay() {
-			
-		/*********************************************************
-		 * @file: framework.php
-		 * @class: city
-		 * @package: twincities
-		 * @created: 20 February 2012
-		 * @author: 09011635
-		 * 
-		 * This function provides the framework for generating the
-		 * XML needed to run the twitter application.
-		 *********************************************************/
-		
-		
-		
-	}
+
 
 }
 
