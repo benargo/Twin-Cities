@@ -87,6 +87,8 @@ for($i = 0; $i < $num_cities; $i++) {
 					/* Map */
 					case 'map':
 
+						require(BASE_URI.'/config/maps.php');
+
 						break;
 
 					/* Instagram */

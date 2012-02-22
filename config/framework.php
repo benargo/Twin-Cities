@@ -134,7 +134,7 @@ class city {
  *********************************************************/
  	
  	/* Variables */
-	private $id;
+	public $id;
  	public $name;
 	public $region;
 	public $country;
@@ -276,6 +276,7 @@ class city {
 		
 	}
 	
+	/* Function: Map */
 	public function map() {
 		
 		/*********************************************************
@@ -289,34 +290,10 @@ class city {
 		 * Google Maps API, and then downloads and returns an
 		 * object which can be used to render the map.
 		 *********************************************************/
-		
-		// Pull in the global hash $key so that we can use the Google Maps API key.
-		global $key;
-		
-		// Set latitude and longitude for the centre of the map.
-		$latitude = $this->map->lat;
-		$longitude = $this->map->long;
-		
-		// Set the radius of the map (in meters)
-		$scale = $this->map->scale;
-		
-		// Build the Google Maps URI
-		$uri = 'https://maps.googleapis.com/maps/api/place/search/xml?key='. $key['google'] .'&location='. $latitude .','. $logitude .'&radius='. $scale;
-		// (Leave the rest of the parameters as default);
-		
-		$xml = @simplexml_load_string(get_file($uri), NULL, LIBXML_NOCDATA);
-		
-		// Conditional: Is the returned XML file valid?
-		if($xml) { // Conditional @value: Yes
 			
-			// Return the SimpleXML string as an object
-			return $xml;
-			
-		} else { // Conditional @value: No 
-			
-			return false;
-			
-		}
+		$xml = $this->map;
+		
+		return $xml->asXML();
 	
 	}
 	
