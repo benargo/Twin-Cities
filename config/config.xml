@@ -10,8 +10,10 @@
 			<lat>51.45</lat>
 			<long>-2.583333</long>
 			<scale>3000</scale>
+			<markers>
+		 		<marker lat="45.185602" lng="5.740748" html="Some stuff to display in the&lt;br&gt;Second Info Window" label="Grenoble, Rhone-Alps" />
+		 	</markers> 
 		</map>
-		<twitter>19603191</twitter>
 	</city>
 	<city id="1">
 		<name>Grenoble</name>
@@ -23,7 +25,10 @@
 			<lat>45.185602</lat>
 			<long>5.740748</long>
 			<scale>3000</scale>
+			<markers>
+		 		<marker lat="51.7522" lng="-1.256" html="Some stuff to display in the&lt;br&gt;Second Info Window" label="Oxford, Oxfordshire" />
+		 		<marker lat="51.757172" lng=" -1.26087" html="Oxford University" label="Oxford University" />
+			</markers> 
 		</map>
-		<twitter>41094890</twitter>
 	</city>
 </config>

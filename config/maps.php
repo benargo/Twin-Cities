@@ -24,15 +24,16 @@ if(defined('BASE_URI')) {
 	?><h1>Google Maps</h1><?php
 	
 	foreach($cities as $city) { ?><section class="city map">
+		<h2><?php echo $city->name; ?></h2>
 
     <!-- you can use tables or divs for the overall layout -->
     <table border=1>
       <tr>
         <td>
-           <div id="map" style="width: 550px; height: 450px"></div>
+           <div id="map_<?php echo $city->name; ?>" style="width: 550px; height: 450px"></div>
         </td>
         <td width = 150 valign="top" style="text-decoration: underline; color: #4444ff;">
-           <div id="side_bar"></div>
+           <div id="side_bar_<?php echo $city->name; ?>"></div>
         </td>
       </tr>
     </table>
@@ -77,14 +78,14 @@ if(defined('BASE_URI')) {
 
 
       // create the map
-      var map = new GMap2(document.getElementById("map"));
+      var map = new GMap2(document.getElementById("map_<?php echo $city->name; ?>"));
       map.addControl(new GLargeMapControl());
       map.addControl(new GMapTypeControl());
-      map.setCenter(new GLatLng( 49.4008,1.4941), 5);
+      map.setCenter(new GLatLng(<?php echo $city->map->lat; ?>,<?php echo $city->map->long; ?>), 5);
 
 
       // Read the data from example.xml
-      GDownloadUrl("<?php echo BASE_URL; ?>/config/map.xml?city=<?php $city->id; ?>", function(doc) {
+      GDownloadUrl("<?php echo BASE_URL; ?>/config/map.xml?city=<?php echo $city->id; ?>", function(doc) {
         var xmlDoc = GXml.parse(doc);
         var markers = xmlDoc.documentElement.getElementsByTagName("marker");
           
@@ -100,7 +101,7 @@ if(defined('BASE_URI')) {
           map.addOverlay(marker);
         }
         // put the assembled side_bar_html contents into the side_bar div
-        document.getElementById("side_bar").innerHTML = side_bar_html;
+        document.getElementById("side_bar_<?php echo $city->name; ?>").innerHTML = side_bar_html;
       });
     }
 

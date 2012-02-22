@@ -140,7 +140,7 @@ class city {
 	public $country;
 	private $weather;
 	private $news;
-	private $map;
+	public $map;
 	private $twitter;
 	
 	/* Function: Object Construction */
@@ -199,7 +199,6 @@ class city {
 		}
 		
 	}
-	
 	
 	/* Function: Get City Weather */
 	public function weather() {

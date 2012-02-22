@@ -10,7 +10,8 @@ if(isset($city_id)) {
 	
 	$xml = $city->map();
 	
-	print_r($xml);
+	echo "<?xml version=\"1.0\"?>";
+	echo $xml;
 
 } else {
 

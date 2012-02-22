@@ -26,10 +26,10 @@ for($i = 0; $i < $num_cities; $i++) {
 	
 	<title>DSA Twin Cities</title>
 	<link rel="stylesheet" href="<?php echo BASE_URL; ?>/styles/twintown.css" />
-	<script src="<?php echo BASE_URL; ?>/scripts/jquery-1.7.1.min.js"></script>
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=AIzaSyC61w44aikgA6Us_8qVbx20xoe4RDSHlNI" type="text/javascript"></script>
 </head>
 
-<body>
+<body onunload="GUnload()">
 
 	<header><!-- Define Header -->
 	
