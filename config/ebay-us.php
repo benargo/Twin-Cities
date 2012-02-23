@@ -4,7 +4,7 @@ error_reporting(E_ALL);  // Turn on all errors, warnings, and notices for easier
 $endpoint1 = 'http://svcs.ebay.com/services/search/FindingService/v1';  // URL to call
 
 include("xmlhandler1.php");
-echo getCityRegion1(1);
+
  
 
 $query1 = getCityRegion1(1);

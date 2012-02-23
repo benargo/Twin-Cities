@@ -1,19 +1,19 @@
 <?php // instagram.php
 
 /*********************************************************
- * @file: instagram.php
+ * @file: maps.php
  * @package: twincities
  * @created: 24 January 2012
  * @updated: 24 January 2012
- * @author: 10008548
+ * @author: 09011635
  * 
- * This file is required by index.php. It pulls in the
- * Instagram API, based on the geocode information for our
- * given cities (this is defined in the XML config file).
- * Once it has the Instagram API it has two functions. One
- * of them being rendering all photos for the given cities
- * and the other one being a large-scale view of a certain
- * photo.
+ *
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  *********************************************************/
 
 
@@ -21,19 +21,19 @@
 if(defined('BASE_URI')) {
 
 	// Echo the page title
-	?><h1>Google Maps</h1><?php
-	
-	foreach($cities as $city) { ?><section class="city map">
-		<h2><?php echo $city->name; ?></h2>
+	?><h1>Google Maps</h1>
+	<p>Please note, we encoutered difficulties when trying to create two maps for the different cities, whilst also using indivudal placemarkers for each map using Javascript. 
+	Therefore, we have used one map that locates all points of interest for both twin cities. </p>
+	<section class="city map">
 
     <!-- you can use tables or divs for the overall layout -->
     <table border=1>
       <tr>
         <td>
-           <div id="map_<?php echo $city->name; ?>" style="width: 550px; height: 450px"></div>
+           <div id="map" style="width: 550px; height: 450px"></div>
         </td>
         <td width = 150 valign="top" style="text-decoration: underline; color: #4444ff;">
-           <div id="side_bar_<?php echo $city->name; ?>"></div>
+           <div id="side_bar"></div>
         </td>
       </tr>
     </table>
@@ -45,7 +45,7 @@ if(defined('BASE_URI')) {
       try again.
     </noscript>
 
-
+	
     <script type="text/javascript">
     //<![CDATA[
 
@@ -78,14 +78,14 @@ if(defined('BASE_URI')) {
 
 
       // create the map
-      var map = new GMap2(document.getElementById("map_<?php echo $city->name; ?>"));
+      var map = new GMap2(document.getElementById("map"));
       map.addControl(new GLargeMapControl());
       map.addControl(new GMapTypeControl());
-      map.setCenter(new GLatLng(<?php echo $city->map->lat; ?>,<?php echo $city->map->long; ?>), 5);
+      map.setCenter(new GLatLng(45.188529,5.724524), 15);
 
 
       // Read the data from example.xml
-      GDownloadUrl("<?php echo BASE_URL; ?>/config/map.xml?city=<?php echo $city->id; ?>", function(doc) {
+      GDownloadUrl("<?php echo BASE_URL; ?>/config/config.xml", function(doc) {
         var xmlDoc = GXml.parse(doc);
         var markers = xmlDoc.documentElement.getElementsByTagName("marker");
           
@@ -101,7 +101,7 @@ if(defined('BASE_URI')) {
           map.addOverlay(marker);
         }
         // put the assembled side_bar_html contents into the side_bar div
-        document.getElementById("side_bar_<?php echo $city->name; ?>").innerHTML = side_bar_html;
+        document.getElementById("side_bar").innerHTML = side_bar_html;
       });
     }
 
@@ -115,5 +115,4 @@ if(defined('BASE_URI')) {
     // http://econym.org.uk/gmap/
 
     //]]>
-    </script></section><?php }
-} ?>
+    </script></section>	<?php } ?>

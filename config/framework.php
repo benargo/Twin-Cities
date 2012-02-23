@@ -418,7 +418,7 @@ class city {
 		// Build the twitter URI
 		$uri = 'http://labs.benargo.com/twitter.php?user_id='. $this->twitter;
 		
-		$xml = @simplexml_load_string(get_file($uri), NULL, LIBXML_NOCDATA);
+		$xml = simplexml_load_string(get_file($uri), NULL, LIBXML_NOCDATA);
 		
 		// Conditional: Is the returned XML file valid?
 		if($xml) { // Conditional @value: Yes
@@ -431,7 +431,7 @@ class city {
 			
 		} else { // Conditional @value: No 
 			
-			return false;
+			die("Failed to load tweets");
 			
 		}
 	

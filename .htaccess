@@ -1,8 +1,6 @@
 RewriteEngine On
 RewriteBase /~b2-argo/dsa_assign/app/
 
-RewriteRule ^config/map.xml config/maps_xml.php [L,QSA]
-
 RewriteRule ^(.+)\.phps$ https://raw.github.com/benargo/Twin-Cities/master/$1.php [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d

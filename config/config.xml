@@ -10,10 +10,8 @@
 			<lat>51.45</lat>
 			<long>-2.583333</long>
 			<scale>3000</scale>
-			<markers>
-		 		<marker lat="45.185602" lng="5.740748" html="Some stuff to display in the&lt;br&gt;Second Info Window" label="Grenoble, Rhone-Alps" />
-		 	</markers> 
 		</map>
+		<twitter>19603191</twitter>
 	</city>
 	<city id="1">
 		<name>Grenoble</name>
@@ -25,10 +23,33 @@
 			<lat>45.185602</lat>
 			<long>5.740748</long>
 			<scale>3000</scale>
-			<markers>
-		 		<marker lat="51.7522" lng="-1.256" html="Some stuff to display in the&lt;br&gt;Second Info Window" label="Oxford, Oxfordshire" />
-		 		<marker lat="51.757172" lng=" -1.26087" html="Oxford University" label="Oxford University" />
-			</markers> 
+			
 		</map>
+		<twitter>41094890</twitter>
 	</city>
+	<markers>
+		<marker lat="45.185602" lng="5.740748" html="Grenoble is a city in southeastern France, at the foot of the French Alps 
+												where the river Drac joins the Isere." label="Grenoble, Rhone-Alps" />
+		<marker lat="45.166025" lng="5.70317" html="Sports Venue/Stadium - Ville de Grenoble" label="Stade Bachelard" />
+		<marker lat="45.192699" lng="5.768262" html="University Joseph Fourier,often known as UJF, is a French university situated in the 
+												city of Grenoble and focused on the fields of sciences, technologies and health. " 
+												label="Joseph Fourier University" />
+		<marker lat="45.188018" lng="5.735212" html="All you would expect from a Natural History Museum plus a tranquile park/ botanic garden" 
+												label="Museum d'Histoire Naturelle" />
+		
+		<marker lat="51.7522" lng="-1.256" html="Oxford is a city in central southern England, the home of the University of Oxford. 
+												The city is the county town of Oxfordshire, and forms a district within the county. 
+												It has a population of just under 165,000, of whom 153,900 live within the district boundary." 
+												label="Oxford, Oxfordshire" />
+		<marker lat="51.717554" lng="-1.211296" html="Oxford United Football Club is an English association football club based in Oxford, Oxfordshire. 
+												The club play in League Two, following promotion from the Conference National in May 2010." 
+												label="Oxford United FC, Kassam Stadium" />
+		<marker lat="51.757172" lng="-1.26087" html="The University of Oxford (informally Oxford University or Oxford) is a university located in Oxford,
+												United Kingdom. It is the second-oldest surviving university in the world and the oldest in the English-speaking world." 
+												label="Oxford University" />
+		<marker lat="51.75861" lng="-1.256057" html="The Oxford University Museum of Natural History, sometimes known simply as the Oxford University Museum, is a museum
+												displaying many of the University of Oxford's natural history specimens, located on Parks Road in Oxford, England." 
+												label="Museum of Natural History" />
+		
+	</markers> 
 </config>
